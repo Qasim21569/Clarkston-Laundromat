@@ -4,6 +4,7 @@ import { ServicesGrid } from "@/components/services-grid"
 import { LocationSection } from "@/components/location-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
+import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 
@@ -26,6 +27,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <FAQSection />
       <Footer />
     </main>
   )

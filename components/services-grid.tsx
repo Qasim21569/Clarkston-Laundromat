@@ -5,13 +5,14 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline"
+import Image from "next/image"
 
 const services = [
   {
     id: 1,
     name: "Self‑Serve Laundromat",
     description: "Bright, clean facility with high‑efficiency washers and dryers, seating, and free Wi‑Fi.",
-    icon: "🧺",
+    icon: "/service grid icons/self-service.png",
     category: "laundry",
     priceRange: "From $2.50",
   },
@@ -19,7 +20,7 @@ const services = [
     id: 2,
     name: "Wash & Fold Services",
     description: "Drop off your laundry and we’ll wash, dry, and neatly fold it—ready same day in most cases.",
-    icon: "👕",
+    icon: "/service grid icons/wash-and-fold.png",
     category: "laundry",
     priceRange: "$1.50/lb",
   },
@@ -27,7 +28,7 @@ const services = [
     id: 3,
     name: "Commercial Laundry",
     description: "Reliable linen and garment care for businesses, hospitality, and organizations of any size.",
-    icon: "🏨",
+    icon: "/service grid icons/commercial.png",
     category: "laundry",
     priceRange: "Custom rates",
   },
@@ -35,7 +36,7 @@ const services = [
     id: 4,
     name: "Pickup & Delivery",
     description: "Convenient door‑to‑door service—schedule a pickup and get your laundry returned fresh and folded.",
-    icon: "🚚",
+    icon: "/service grid icons/pickup.png",
     category: "laundry",
     priceRange: "From $15",
   },
@@ -43,7 +44,7 @@ const services = [
     id: 5,
     name: "Dry Cleaning",
     description: "Professional dry cleaning for suits, dresses, and specialty fabrics—handled with expert care.",
-    icon: "🧥",
+    icon: "/service grid icons/dry-clean.png",
     category: "drycleaning",
     priceRange: "Per item",
   },
@@ -51,7 +52,7 @@ const services = [
     id: 6,
     name: "UPS Authorized Service Center",
     description: "Ship, drop off, and pack with confidence at our in‑store UPS Authorized Service Center.",
-    icon: "📦",
+    icon: "/service grid icons/ups-shipping.png",
     category: "ups",
     priceRange: "UPS rates",
   },
@@ -59,7 +60,7 @@ const services = [
     id: 7,
     name: "Private Mailboxes",
     description: "Secure street‑address mailboxes with notifications and optional mail forwarding.",
-    icon: "📬",
+    icon: "/service grid icons/mailbox.png",
     category: "business",
     priceRange: "From $25/mo",
   },
@@ -67,7 +68,7 @@ const services = [
     id: 8,
     name: "Amazon Lockers",
     description: "Pick up Amazon packages on your schedule—fast, secure, and convenient.",
-    icon: "📱",
+    icon: "/service grid icons/amazon-locker.png",
     category: "business",
     priceRange: "Free",
   },
@@ -75,7 +76,7 @@ const services = [
     id: 9,
     name: "Document Shredding",
     description: "On‑site, secure shredding for personal and business documents—by the box or by the pound.",
-    icon: "🗂️",
+    icon: "/service grid icons/shredder.png",
     category: "business",
     priceRange: "$1/lb",
   },
@@ -83,7 +84,7 @@ const services = [
     id: 10,
     name: "ATM",
     description: "In‑store ATM for quick cash access while you shop or do laundry.",
-    icon: "💳",
+    icon: "/service grid icons/atm.png",
     category: "business",
     priceRange: "Standard fees",
   },
@@ -143,8 +144,18 @@ export function ServicesGrid() {
               className="service-card group p-6 hover:shadow-lg transition-all duration-300 cursor-pointer border border-border hover:border-primary/20 bg-white/90"
             >
               <div className="flex items-start mb-4">
-                <div className="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                  {service.icon}
+                <div className="service-icon shrink-0">
+                  {typeof service.icon === "string" && service.icon.startsWith("/") ? (
+                    <Image
+                      src={service.icon}
+                      alt={`${service.name} icon`}
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 object-contain"
+                    />
+                  ) : (
+                    <span className="text-3xl leading-none">{service.icon as unknown as string}</span>
+                  )}
                 </div>
               </div>
 
@@ -187,8 +198,18 @@ export function ServicesGrid() {
                   onClick={() => toggleCard(service.id)}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="service-icon w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-xl">
-                      {service.icon}
+                    <div className="service-icon shrink-0">
+                      {typeof service.icon === "string" && service.icon.startsWith("/") ? (
+                        <Image
+                          src={service.icon}
+                          alt={`${service.name} icon`}
+                          width={40}
+                          height={40}
+                          className="w-10 h-10 object-contain"
+                        />
+                      ) : (
+                        <span className="text-2xl leading-none">{service.icon as unknown as string}</span>
+                      )}
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-base text-foreground">

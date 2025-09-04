@@ -39,8 +39,14 @@ export function HeroSection() {
             {/* Service Quick Links */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
               <Card className="flex flex-col items-start justify-start text-left gap-3 sm:gap-4 p-3 sm:p-4 hover:shadow-md transition-shadow cursor-pointer w-full h-auto min-h-[5.5rem] sm:min-h-[7rem] rounded-xl">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                  <span className="text-2xl">🧺</span>
+                <div className="shrink-0">
+                  <Image
+                    src="/home-hero-laundry.png"
+                    alt="Laundry services icon"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <div className="mt-1">
                   <div className="font-semibold text-foreground">Laundry</div>
@@ -49,8 +55,14 @@ export function HeroSection() {
               </Card>
 
               <Card className="flex flex-col items-start justify-start text-left gap-3 sm:gap-4 p-3 sm:p-4 hover:shadow-md transition-shadow cursor-pointer w-full h-auto min-h-[5.5rem] sm:min-h-[7rem] rounded-xl">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                  <span className="text-2xl">🧥</span>
+                <div className="shrink-0">
+                  <Image
+                    src="/home-hero-dry-clean.png"
+                    alt="Dry cleaning services icon"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <div className="mt-1">
                   <div className="font-semibold text-foreground">Dry Cleaning</div>
@@ -59,8 +71,14 @@ export function HeroSection() {
               </Card>
 
               <Card className="flex flex-col items-start justify-start text-left gap-3 sm:gap-4 p-3 sm:p-4 hover:shadow-md transition-shadow cursor-pointer w-full h-auto min-h-[5.5rem] sm:min-h-[7rem] rounded-xl">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                  <span className="text-2xl">📦</span>
+                <div className="shrink-0">
+                  <Image
+                    src="/home-hero-shipping.png"
+                    alt="Shipping services icon"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <div className="mt-1">
                   <div className="font-semibold text-foreground">Shipping</div>
