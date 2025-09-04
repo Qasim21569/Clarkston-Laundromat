@@ -219,362 +219,117 @@ export default function LaundryPage() {
       
 
       {/* How It Works - Professional Aligned Design */}
-      <section className="py-10 md:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
-              How Our Services Work
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Three distinct service levels designed around your lifestyle and convenience preferences
-            </p>
+    <section className="relative py-16 md:py-24  bg-gradient-to-br from-background to-muted">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Heading */}
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-bold font-heading tracking-tight text-gray-900 mb-6">
+        How Our Services Work
+      </h2>
+      <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Three distinct service levels tailored to your lifestyle, designed for convenience and care.
+      </p>
+    </div>
+
+    {/* Services Grid */}
+    <div className="grid lg:grid-cols-3 gap-10">
+      {/* Card Template */}
+      {[
+        {
+          title: "Self-Service Laundromat",
+          desc: "Complete control in our modern facility",
+          img: "/how it works/self-service/Laundry and dry cleaning-rafiki (1).svg",
+          steps: [
+            { icon: "/how it works/self-service/step1.png", title: "Arrive & Load", desc: "Bring your laundry and choose the perfect machine size." },
+            { icon: "/how it works/self-service/step2.png", title: "Select & Pay", desc: "Choose settings and pay with card, mobile, or cash." },
+            { icon: "/how it works/self-service/step3.png", title: "Wait & Transfer", desc: "Relax with free Wi-Fi, then move to dryer when ready." },
+            { icon: "/how it works/self-service/step4.png", title: "Collect & Go", desc: "Take your clean, dry clothes and head home." }
+          ],
+          cta: "Visit Our Facility"
+        },
+        {
+          title: "Wash, Dry & Fold",
+          desc: "Professional service with same-day turnaround",
+          img: "/how it works/wash-and-fold/Laundry and dry cleaning-pana.svg",
+          steps: [
+            { icon: "/how it works/wash-and-fold/step1.png", title: "Drop Off Bag", desc: "Bring laundry with special instructions." },
+            { icon: "/how it works/wash-and-fold/step2.png", title: "We Sort & Tag", desc: "Sorting by color and fabric type." },
+            { icon: "/how it works/wash-and-fold/step3.png", title: "Expert Processing", desc: "Cold wash, gentle dry with premium detergents." },
+            { icon: "/how it works/wash-and-fold/step4.png", title: "Same-Day Pickup", desc: "Neatly folded and packaged for collection." }
+          ],
+          cta: "Drop Off Today"
+        },
+        {
+          title: "Pickup & Delivery",
+          desc: "Ultimate convenience with door-to-door service",
+          img: "/how it works/pickup-and-deliver/Delivery-pana.svg",
+          steps: [
+            { icon: "/how it works/pickup-and-deliver/step1.png", title: "Schedule Pickup", desc: "Book online or call for convenient time slot." },
+            { icon: "/how it works/pickup-and-deliver/step2.png", title: "We Collect", desc: "Our van picks up from your doorstep." },
+            { icon: "/how it works/pickup-and-deliver/step3.png", title: "Professional Processing", desc: "Expert wash, dry, fold at our facility." },
+            { icon: "/how it works/pickup-and-deliver/step4.png", title: "Next-Day Delivery", desc: "Clean laundry delivered to your door." }
+          ],
+          cta: "Schedule Pickup"
+        }
+      ].map((service, idx) => (
+        <div
+          key={idx}
+          className="group flex flex-col bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300"
+        >
+          {/* Header */}
+          <div className="text-center px-6 pt-10 pb-6 border-b border-gray-100">
+            <div className="w-28 h-28 mx-auto mb-4 p-5 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-md group-hover:scale-105 transition-transform duration-300">
+              <img src={service.img} alt={service.title} className="w-full h-full object-contain" />
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-900">{service.title}</h3>
+            <p className="text-gray-600 text-sm md:text-base mt-1">{service.desc}</p>
           </div>
 
-          {/* Professional Aligned Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-6">
-            
-            {/* Self-Service Column */}
-            <div className="group h-full flex flex-col">
-              {/* Service Header - Fixed Height */}
-              <div className="text-center mb-8 h-56 flex flex-col justify-center">
-                <div className="w-32 h-32 mx-auto mb-4 p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300 border border-gray-200/50">
-                  <img 
-                    src="/how it works/self-service/Laundry and dry cleaning-rafiki (1).svg" 
-                    alt="Self-Service Laundromat" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Self-Service Laundromat</h3>
-                <p className="text-gray-600 text-sm md:text-base">Complete control in our modern facility</p>
-              </div>
-
-              {/* Process Steps Flow - Flexible Height */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 p-6 mb-6 flex-grow">
-                <div className="space-y-6">
-                  {/* Step 1 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/self-service/step1.png" 
-                          alt="Arrive & Load" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Arrive & Load</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Bring your laundry and choose the perfect machine size for your load</p>
-                    </div>
+          {/* Steps */}
+          <div className="flex-grow px-6 py-8">
+            <div className="space-y-6 relative">
+              {service.steps.map((step, i) => (
+                <div key={i} className="flex items-start gap-4 group-hover:translate-x-1 transition-transform duration-200">
+                  <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200 shadow-sm">
+                    <img src={step.icon} alt={step.title} className="w-7 h-7 object-contain" />
                   </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 2 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-75">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/self-service/step2.png" 
-                          alt="Select & Pay" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Select & Pay</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Choose settings and pay with card, mobile, or cash</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-150">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/self-service/step3.png" 
-                          alt="Wait & Transfer" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Wait & Transfer</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Relax with free Wi-Fi, then move to dryer when ready</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 4 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-200">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/self-service/step4.png" 
-                          alt="Collect & Go" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Collect & Go</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Take your clean, dry clothes and head home</p>
-                    </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">{step.title}</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
-              </div>
-
-              {/* CTA Button - Fixed Position */}
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold py-3 text-base transition-all duration-200 hover:scale-[1.02] shadow-lg">
-                Visit Our Facility
-              </Button>
-            </div>
-
-            {/* Wash & Fold Column */}
-            <div className="group h-full flex flex-col">
-              {/* Service Header - Fixed Height */}
-              <div className="text-center mb-8 h-56 flex flex-col justify-center">
-                <div className="w-32 h-32 mx-auto mb-4 p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300 border border-gray-200/50">
-                  <img 
-                    src="/how it works/wash-and-fold/Laundry and dry cleaning-pana.svg" 
-                    alt="Wash, Dry & Fold" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Wash, Dry & Fold</h3>
-                <p className="text-gray-600 text-sm md:text-base">Professional service with same-day turnaround</p>
-              </div>
-
-              {/* Process Steps Flow - Flexible Height */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 p-6 mb-6 flex-grow">
-                <div className="space-y-6">
-                  {/* Step 1 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/wash-and-fold/step1.png" 
-                          alt="Drop Off Bag" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Drop Off Bag</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Bring laundry with any special instructions or preferences</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 2 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-75">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/wash-and-fold/step2.png" 
-                          alt="We Sort & Tag" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">We Sort & Tag</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Professional sorting by color and fabric type</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-150">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/wash-and-fold/step3.png" 
-                          alt="Expert Processing" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Expert Processing</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Cold wash, gentle dry with premium detergents</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 4 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-200">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/wash-and-fold/step4.png" 
-                          alt="Same-Day Pickup" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Same-Day Pickup</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Neatly folded and packaged for collection</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* CTA Button - Fixed Position */}
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold py-3 text-base transition-all duration-200 hover:scale-[1.02] shadow-lg">
-                Drop Off Today
-              </Button>
-            </div>
-
-            {/* Pickup & Delivery Column */}
-            <div className="group h-full flex flex-col">
-              {/* Service Header - Fixed Height */}
-              <div className="text-center mb-8 h-56 flex flex-col justify-center">
-                <div className="w-32 h-32 mx-auto mb-4 p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300 border border-gray-200/50">
-                  <img 
-                    src="/how it works/pickup-and-deliver/Delivery-pana.svg" 
-                    alt="Pickup & Delivery" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Pickup & Delivery</h3>
-                <p className="text-gray-600 text-sm md:text-base">Ultimate convenience with door-to-door service</p>
-              </div>
-
-              {/* Process Steps Flow - Flexible Height */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 p-6 mb-6 flex-grow">
-                <div className="space-y-6">
-                  {/* Step 1 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/pickup-and-deliver/step1.png" 
-                          alt="Schedule Pickup" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Schedule Pickup</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Book online or call for convenient time slot</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 2 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-75">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/pickup-and-deliver/step2.png" 
-                          alt="We Collect" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">We Collect</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Our van picks up from your doorstep</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-150">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/pickup-and-deliver/step3.png" 
-                          alt="Professional Processing" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Professional Processing</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Expert wash, dry, fold at our facility</p>
-                    </div>
-                  </div>
-
-                  {/* Flow Line */}
-                  <div className="flex justify-start ml-7">
-                    <div className="w-0.5 h-4 bg-gray-300"></div>
-                  </div>
-
-                  {/* Step 4 */}
-                  <div className="flex items-start gap-4 group-hover:transform group-hover:scale-[1.01] transition-transform duration-200 delay-200">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-200/50 shadow-sm">
-                        <img 
-                          src="/how it works/pickup-and-deliver/step4.png" 
-                          alt="Next-Day Delivery" 
-                          className="w-8 h-8 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Next-Day Delivery</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Clean laundry delivered to your door</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* CTA Button - Fixed Position */}
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold py-3 text-base transition-all duration-200 hover:scale-[1.02] shadow-lg">
-                Schedule Pickup
-              </Button>
+              ))}
             </div>
           </div>
 
-          {/* Global CTA Section */}
-          <div className="mt-16 text-center">
-            <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 p-8 md:p-12 max-w-4xl mx-auto">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Experience Professional Care?</h3>
-              <p className="text-gray-600 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
-                Choose the service that matches your lifestyle and let us handle the rest with professional expertise.
-              </p>
-              <Button size="lg" className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold px-12 py-4 text-xl transition-all duration-200 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
-                Get Started Today
-              </Button>
-            </div>
+          {/* CTA */}
+          <div className="px-6 pb-8">
+            <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold py-3 text-base rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-xl">
+              {service.cta}
+            </Button>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Global CTA */}
+    <div className="mt-20 text-center">
+      <div className="bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl border border-gray-200 p-10 md:p-14 max-w-4xl mx-auto">
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Ready to Experience Professional Care?
+        </h3>
+        <p className="text-gray-600 mb-8 text-lg max-w-2xl mx-auto">
+          Choose the service that matches your lifestyle and let us handle the rest with professional expertise.
+        </p>
+        <Button size="lg" className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold px-10 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-[1.04] shadow-xl hover:shadow-2xl">
+          Get Started Today
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Clean Care Promise - Revamped */}
       <section className="py-10">
