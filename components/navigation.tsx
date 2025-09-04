@@ -65,7 +65,7 @@ export function Navigation() {
                     </div>
                   </Link>
                   <Link
-                    href="/laundry"
+                    href="/drycleaning"
                     onClick={() => setIsServicesOpen(false)}
                     className="flex items-start gap-3 p-3 rounded-md hover:bg-muted transition-colors"
                   >
@@ -134,41 +134,109 @@ export function Navigation() {
             <Button className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black">Schedule Pickup</Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary"
-          >
-            {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
-          </button>
+          {/* Mobile Phone & Menu */}
+          <div className="md:hidden flex items-center gap-3">
+            <a
+              href="tel:+14045551234"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+            >
+              (404) 555-1234
+            </a>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-foreground hover:text-primary"
+            >
+              {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">
+              <Link 
+                href="/" 
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
-              <Link href="/laundry" className="text-foreground hover:text-primary transition-colors">
-                Laundry Services
-              </Link>
-              <Link href="/shipping" className="text-foreground hover:text-primary transition-colors">
-                Shipping & Mail
-              </Link>
-              <Link href="/pricing" className="text-foreground hover:text-primary transition-colors">
+              
+              {/* Services Section */}
+              <div className="space-y-3">
+                <div className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Services</div>
+                <Link 
+                  href="/laundry" 
+                  className="flex items-start gap-3 text-foreground hover:text-primary transition-colors pl-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="w-6 h-6 bg-primary/10 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary text-xs">🧺</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">Laundry Services</div>
+                    <div className="text-xs text-muted-foreground">Self-service, wash & fold, pickup</div>
+                  </div>
+                </Link>
+                <Link 
+                  href="/drycleaning" 
+                  className="flex items-start gap-3 text-foreground hover:text-primary transition-colors pl-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="w-6 h-6 bg-primary/10 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary text-xs">🧥</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">Drycleaning Services</div>
+                    <div className="text-xs text-muted-foreground">Delicates, suits, dresses, specialty care</div>
+                  </div>
+                </Link>
+                <Link 
+                  href="/shipping" 
+                  className="flex items-start gap-3 text-foreground hover:text-primary transition-colors pl-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="w-6 h-6 bg-primary/10 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary text-xs">📦</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">UPS Services</div>
+                    <div className="text-xs text-muted-foreground">UPS Authorized Service Center, Amazon Lockers</div>
+                  </div>
+                </Link>
+                <Link 
+                  href="/shipping" 
+                  className="flex items-start gap-3 text-foreground hover:text-primary transition-colors pl-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="w-6 h-6 bg-primary/10 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary text-xs">🏢</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">Business Services</div>
+                    <div className="text-xs text-muted-foreground">Mailboxes, Document Shredding, ATM</div>
+                  </div>
+                </Link>
+              </div>
+              
+              <Link 
+                href="/pricing" 
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Pricing
               </Link>
               <div className="text-muted-foreground cursor-not-allowed select-none">Promotions</div>
-              <Link href="/location" className="text-foreground hover:text-primary transition-colors">
+              <Link 
+                href="/location" 
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Location
               </Link>
               
               <div className="pt-4 border-t border-border">
-                <a href="tel:+14045551234" className="flex items-center gap-2 text-muted-foreground mb-3">
-                  <PhoneIcon className="w-4 h-4" />
-                  (404) 555-1234
-                </a>
                 <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black">Schedule Pickup</Button>
               </div>
             </div>
