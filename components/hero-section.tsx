@@ -16,7 +16,7 @@ export function HeroSection() {
             <OpenClosedBadge />
 
             <div>
-              <h1 className="font-heading font-bold text-5xl lg:text-6xl text-foreground leading-tight mb-3">
+              <h1 className="font-heading font-bold text-5xl lg:text-6xl text-[#12273B] leading-tight mb-3">
                 Clarkston Laundry & Shipping Centre
               </h1>
 

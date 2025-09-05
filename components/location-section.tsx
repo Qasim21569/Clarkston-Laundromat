@@ -25,7 +25,10 @@ export function LocationSection() {
           {/* Location Info */}
           <div className="location-info space-y-8">
             <div>
-              <h2 className="font-heading font-bold text-4xl text-foreground mb-4">Visit Clarkstons Laundry & Shipping Centre</h2>
+              <div className="inline-block relative mb-2">
+                <h2 className="font-heading font-bold text-4xl text-[#12273B]">Visit Clarkstons Laundry & Shipping Centre</h2>
+                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-28 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+              </div>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Conveniently located on Brockett Road with ample parking, modern equipment and a comfortable environment for all your service needs.
               </p>

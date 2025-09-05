@@ -117,7 +117,10 @@ export function ServicesGrid() {
     <section className="pt-16 pb-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl text-foreground mb-4">All Your Needs Under One Roof</h2>
+          <div className="inline-block relative">
+            <h2 className="font-heading font-bold text-4xl text-[#12273B] mb-2">All Your Needs Under One Roof</h2>
+            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-28 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           From Laundromat and dry cleaning to shipping and shreds, we are your one-stop laundry and shipping solution in Clarkston, Georgia.
           </p>
@@ -141,9 +144,9 @@ export function ServicesGrid() {
           {filteredServices.map((service) => (
             <Card
               key={service.id}
-              className="service-card group p-6 hover:shadow-lg transition-all duration-300 cursor-pointer border border-border hover:border-primary/20 bg-white/90"
+              className="service-card group p-6 hover:shadow-lg transition-all duration-300 cursor-pointer border border-border hover:border-[#1C3754]/40 bg-white/90 flex flex-col h-full"
             >
-              <div className="flex items-start mb-4">
+              <div className="flex justify-center items-center mb-4">
                 <div className="service-icon shrink-0">
                   {typeof service.icon === "string" && service.icon.startsWith("/") ? (
                     <Image
@@ -159,17 +162,17 @@ export function ServicesGrid() {
                 </div>
               </div>
 
-              <div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
+              <div className="text-center mb-3">
+                <h3 className="font-heading font-semibold text-lg text-foreground mb-2 group-hover:text-[#1C3754] transition-colors">
                   {service.name}
                 </h3>
               </div>
 
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed text-center flex-grow">{service.description}</p>
 
-              <div className="mt-4 pt-4 flex items-center justify-between border-t border-border/70">
-                <span className="text-sm font-semibold text-primary">{service.priceRange}</span>
-                <Button variant="ghost" size="sm" className="text-[#ebc66d] hover:text-[#ebc66d]/80">
+              <div className="mt-4 pt-4 flex flex-col items-center gap-3 border-t border-[#1C3754]/30">
+                <span className="text-sm font-semibold text-[#1C3754]">{service.priceRange}</span>
+                <Button variant="ghost" size="sm" className="text-[#ebc66d] hover:text-[#ebc66d]/80 hover:bg-[#ebc66d]/10 w-full">
                   Learn More
                 </Button>
               </div>
@@ -215,7 +218,7 @@ export function ServicesGrid() {
                       <h3 className="font-heading font-semibold text-base text-foreground">
                         {service.name}
                       </h3>
-                      <span className="text-sm font-medium text-primary">{service.priceRange}</span>
+                      <span className="text-sm font-medium text-[#1C3754]">{service.priceRange}</span>
                     </div>
                   </div>
                   <div className="flex-shrink-0">

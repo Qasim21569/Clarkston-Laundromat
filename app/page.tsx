@@ -19,7 +19,10 @@ export default function HomePage() {
       {/* Partnered With */}
       <section className="py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-8">Partnered with</h3>
+          <div className="inline-block relative mb-8">
+            <h3 className="text-3xl sm:text-4xl font-heading font-bold text-[#12273B]">Partnered with</h3>
+            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-24 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16 opacity-95">
             <Image src="/partnered/partner1.jpg" alt="Partner 1" width={280} height={140} className="h-16 sm:h-20 md:h-24 w-auto object-contain rounded" />
             <Image src="/partnered/partner2.jpg" alt="Partner 2" width={280} height={140} className="h-16 sm:h-20 md:h-24 w-auto object-contain rounded" />

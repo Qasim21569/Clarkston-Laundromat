@@ -56,8 +56,11 @@ export function TestimonialsSection() {
     <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl text-foreground mb-4">What Our Customers Say</h2>
-          <p className="text-xl text-muted-foreground">Real experiences from our valued customers in the Clarkston community</p>
+          <div className="inline-block relative">
+            <h2 className="font-heading font-bold text-4xl text-[#12273B] mb-2">What Our Customers Say</h2>
+            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-28 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+          </div>
+          <p className="text-xl text-muted-foreground mt-4">Real experiences from our valued customers in the Clarkston community</p>
         </div>
 
         {/* Desktop/Tablet: 3 up */}

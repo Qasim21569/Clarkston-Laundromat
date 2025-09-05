@@ -5,6 +5,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { DCQuickCards } from '@/components/dc-quick-cards'
 import { CheckIcon, SparklesIcon, StarIcon, ClockIcon, TruckIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -53,404 +54,118 @@ export default function DryCleaningPage() {
         </div>
       </section>
 
-      {/* Quick Access Service Cards */}
-      <section className="py-8 md:py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <Card className="p-4 md:p-6 bg-white/90 hover:bg-white/95 transition-all duration-300 group cursor-pointer border border-gray-100/50 rounded-xl">
-              <div className="flex flex-col items-start h-full">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <SparklesIcon className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-semibold text-sm md:text-base text-gray-900 mb-1">Everyday Wear</h3>
-                  <p className="text-xs md:text-sm text-gray-600">Shirts, suits, dresses</p>
-                </div>
-              </div>
-            </Card>
+      {/* Quick Access Service Cards (Interactive) */}
+      <DCQuickCards />
 
-            <Card className="p-4 md:p-6 bg-white/90 hover:bg-white/95 transition-all duration-300 group cursor-pointer border border-gray-100/50 rounded-xl">
-              <div className="flex flex-col items-start h-full">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <StarIcon className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-semibold text-sm md:text-base text-gray-900 mb-1">Specialty & Formal</h3>
-                  <p className="text-xs md:text-sm text-gray-600">Gowns, tuxedos, silk</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-4 md:p-6 bg-white/90 hover:bg-white/95 transition-all duration-300 group cursor-pointer border border-gray-100/50 rounded-xl">
-              <div className="flex flex-col items-start h-full">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <StarIcon className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-semibold text-sm md:text-base text-gray-900 mb-1">Household Items</h3>
-                  <p className="text-xs md:text-sm text-gray-600">Comforters, drapes</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-4 md:p-6 bg-white/90 hover:bg-white/95 transition-all duration-300 group cursor-pointer border border-gray-100/50 rounded-xl">
-              <div className="flex flex-col items-start h-full">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <SparklesIcon className="w-5 h-5 md:w-6 md:h-6 text-orange-600" />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-semibold text-sm md:text-base text-gray-900 mb-1">Alterations & Repairs</h3>
-                  <p className="text-xs md:text-sm text-gray-600">Hems, buttons, tailoring</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Services Grid */}
+      {/* Core Services - Centered Focus */}
       <section className="py-10 md:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Complete Dry Cleaning Services
-            </h2>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Professional care for all your garments, from everyday items to luxury pieces and specialty services
+            <div className="inline-block relative">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#12273B] mb-2">
+                Professional Dry Cleaning Services
+              </h2>
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-28 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+            </div>
+            <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
+              From everyday garments to specialty items, we provide expert care with professional pressing and stain treatment
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {/* Standard Dry Cleaning */}
-            <Card className="p-6 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
-                  <SparklesIcon className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-gray-900">Standard Dry Cleaning</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Drop-off Services */}
+            <Card className="p-8 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <Image src="/dry-clean-page/everyday-wear.png" alt="Drop-off dry cleaning" width={80} height={80} className="w-20 h-20 object-contain" />
+                <h3 className="text-2xl font-heading font-bold text-[#12273B]">Drop-Off Dry Cleaning</h3>
               </div>
-              <ul className="space-y-2 mb-6 flex-grow">
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Shirts, blouses, trousers</span>
+              <p className="text-muted-foreground mb-6">
+                Bring your items to our facility for professional cleaning. Standard turnaround is 2-3 business days, with same-day service available for urgent items.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Shirts, suits, dresses & everyday wear</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Business suits & jackets</span>
+                <li className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Professional pressing included</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Everyday dresses</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Professional pressing included</span>
+                <li className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Expert stain treatment</span>
                 </li>
               </ul>
               <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Get Quote
+                Drop Off Today
               </Button>
             </Card>
 
-            {/* Specialty & Formal */}
-            <Card className="p-6 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center">
-                  <StarIcon className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-gray-900">Specialty & Formal</h3>
+            {/* Pickup & Delivery */}
+            <Card className="p-8 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <Image src="/dry-clean-page/pickup-dry-clean.png" alt="Pickup and delivery" width={80} height={80} className="w-20 h-20 object-contain" />
+                <h3 className="text-2xl font-heading font-bold text-[#12273B]">Pickup & Delivery</h3>
               </div>
-              <ul className="space-y-2 mb-6 flex-grow">
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Wedding & evening gowns</span>
+              <p className="text-muted-foreground mb-6">
+                Convenient door-to-door service for your dry cleaning needs. Schedule online or call to arrange pickup and delivery times that work for you.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Scheduled pickup times</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Tuxedos & formal wear</span>
+                <li className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Next-day delivery available</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Silk, cashmere, wool</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Beaded & embellished items</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Learn More
-              </Button>
-            </Card>
-
-            {/* Household Items */}
-            <Card className="p-6 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center">
-                  <StarIcon className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-gray-900">Household & Bulk</h3>
-              </div>
-              <ul className="space-y-2 mb-6 flex-grow">
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Comforters & bedspreads</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Curtains & drapes</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Area rugs & carpets</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Upholstery cleaning</span>
+                <li className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Contactless service options</span>
                 </li>
               </ul>
               <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
                 Schedule Pickup
               </Button>
             </Card>
-
-            {/* Alterations & Repairs */}
-            <Card className="p-6 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center">
-                  <SparklesIcon className="w-6 h-6 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-gray-900">Alterations & Repairs</h3>
-              </div>
-              <ul className="space-y-2 mb-6 flex-grow">
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Hemming & tailoring</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Button & zipper repair</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Seam repairs & patches</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Custom fitting services</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Book Consultation
-              </Button>
-            </Card>
           </div>
         </div>
       </section>
 
-      {/* How Our Dry Cleaning Works - 3 Column Process Flow */}
-      <section className="py-10 md:py-14 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              How Our Professional Dry Cleaning Works
-            </h2>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Our expert process ensures your garments receive the precise care they deserve
-            </p>
-          </div>
-
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 p-8 md:p-12 relative overflow-hidden">
-            {/* Decorative background */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
-            
-            <div className="grid lg:grid-cols-3 gap-8 lg:gap-6">
-              {/* Drop Off/Pickup Column */}
-              <div className="h-full flex flex-col group transition-all duration-300 delay-75">
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 mb-6 flex flex-col items-center justify-center text-center">
-                  <div className="w-32 h-32 p-6 mb-4">
-                    <div className="w-full h-full bg-blue-100 rounded-full flex items-center justify-center">
-                      <SparklesIcon className="w-16 h-16 text-blue-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-gray-900">Drop Off / Request Pickup</h3>
+      {/* Rugs & Carpets */}
+      <section className="py-10 md:py-14 bg-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-100/50 p-8 md:p-12">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <Image src="/dry-clean-page/rug.png" alt="Rug cleaning" width={80} height={80} className="w-20 h-20 object-contain" />
+                  <h3 className="text-3xl font-heading font-bold text-[#12273B]">Rugs & Carpet Cleaning</h3>
                 </div>
-
-                <div className="flex-grow space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-blue-600 font-bold text-lg">1</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Convenient Drop-Off</h4>
-                      <p className="text-sm text-gray-600">Bring items to our facility or schedule pickup</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-blue-600 font-bold text-lg">2</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Initial Assessment</h4>
-                      <p className="text-sm text-gray-600">We examine each garment for stains and fabric type</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-blue-600 font-bold text-lg">3</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Service Selection</h4>
-                      <p className="text-sm text-gray-600">Choose standard, rush, or specialty treatments</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-blue-600 font-bold text-lg">4</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Receipt & Tracking</h4>
-                      <p className="text-sm text-gray-600">Get your receipt with pickup date and tracking info</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4">
-                  <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                    Drop Off Today
-                  </Button>
-                </div>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Professional cleaning for area rugs, Persian rugs, and carpets. We handle delicate fibers and intricate patterns with specialized care techniques.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">All rug types: Persian, Oriental, synthetic</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">Pet stain & odor removal</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">Pickup & delivery for large items</span>
+                  </li>
+                </ul>
+                <Button size="lg" className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
+                  Get Rug Quote
+                </Button>
               </div>
-
-              {/* Professional Cleaning Column */}
-              <div className="h-full flex flex-col group transition-all duration-300 delay-150">
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 mb-6 flex flex-col items-center justify-center text-center">
-                  <div className="w-32 h-32 p-6 mb-4">
-                    <div className="w-full h-full bg-purple-100 rounded-full flex items-center justify-center">
-                      <SparklesIcon className="w-16 h-16 text-purple-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-gray-900">Expert Cleaning Process</h3>
-                </div>
-
-                <div className="flex-grow space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-purple-600 font-bold text-lg">1</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Pre-Treatment</h4>
-                      <p className="text-sm text-gray-600">Stain treatment and fabric preparation</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-purple-600 font-bold text-lg">2</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Solvent Selection</h4>
-                      <p className="text-sm text-gray-600">Choose appropriate cleaning method for each fabric</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-purple-600 font-bold text-lg">3</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Professional Cleaning</h4>
-                      <p className="text-sm text-gray-600">Gentle yet thorough cleaning process</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-purple-600 font-bold text-lg">4</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Quality Inspection</h4>
-                      <p className="text-sm text-gray-600">Thorough check for cleaning quality and care</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4">
-                  <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                    Learn About Process
-                  </Button>
-                </div>
-              </div>
-
-              {/* Finishing & Pickup Column */}
-              <div className="h-full flex flex-col group transition-all duration-300 delay-200">
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 mb-6 flex flex-col items-center justify-center text-center">
-                  <div className="w-32 h-32 p-6 mb-4">
-                    <div className="w-full h-full bg-green-100 rounded-full flex items-center justify-center">
-                      <CheckIcon className="w-16 h-16 text-green-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-gray-900">Finishing & Ready</h3>
-                </div>
-
-                <div className="flex-grow space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-green-600 font-bold text-lg">1</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Professional Pressing</h4>
-                      <p className="text-sm text-gray-600">Expert pressing and steam finishing</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-green-600 font-bold text-lg">2</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Careful Packaging</h4>
-                      <p className="text-sm text-gray-600">Protective garment bags and proper hanging</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-green-600 font-bold text-lg">3</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Ready Notification</h4>
-                      <p className="text-sm text-gray-600">Text or call when your order is ready</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-4 bg-gray-300 mx-7" />
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gray-50 border border-gray-200/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 text-green-600 font-bold text-lg">4</div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Pickup or Delivery</h4>
-                      <p className="text-sm text-gray-600">Convenient pickup or delivery to your location</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4">
-                  <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                    Schedule Pickup
-                  </Button>
+              <div className="relative">
+                <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">[ Rug Cleaning Process Image ]</span>
                 </div>
               </div>
             </div>
@@ -458,184 +173,135 @@ export default function DryCleaningPage() {
         </div>
       </section>
 
-      {/* Specialty Partner Services */}
-      <section className="py-10 md:py-14 bg-white/10">
+      
+
+      {/* Trusted Partnership Services */}
+      <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Specialty Partner Services
-            </h2>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Expert care for your most valuable items through our trusted partnerships
+          <div className="text-center mb-16">
+            <div className="inline-block relative">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#12273B] mb-2">
+                Trusted Partnership Services
+              </h2>
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-32 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+            </div>
+            <p className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto">
+              We've partnered with industry leaders to bring you specialized services for your most valued items
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Wedding Gown Preservation */}
-            <Card className="p-8 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-purple-50 rounded-xl flex items-center justify-center">
-                  <StarIcon className="w-8 h-8 text-purple-600" />
-                </div>
+          {/* Wedding Gown Preservation - Feature Section */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl border border-purple-100/50 p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-purple-200/20 rounded-full blur-3xl" />
+              <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-2xl font-heading font-bold text-gray-900">Wedding Gown Preservation</h3>
-                  <p className="text-sm text-purple-600 font-medium">Partnered with Wedding Gown Preservation Co.</p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src="/dry-clean-page/wedding-gown.png" alt="Wedding gown preservation" width={80} height={80} className="w-20 h-20 object-contain" />
+                    <div>
+                      <h3 className="text-3xl font-heading font-bold text-[#12273B] mb-1">Wedding Gown Preservation</h3>
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm text-purple-600 font-semibold">PARTNERED WITH</span>
+                        <Image src="/partnered/partner3.jpg" alt="Wedding Gown Preservation Co." width={120} height={40} className="h-6 w-auto object-contain" />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-lg text-gray-700 mb-6">
+                    Preserve your precious wedding memories with museum-quality preservation techniques. Our certified specialists ensure your gown remains beautiful for generations.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-start gap-3">
+                      <CheckIcon className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Museum-quality preservation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckIcon className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Acid-free preservation boxes</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckIcon className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Expert stain removal first</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckIcon className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Lifetime guarantee</span>
+                    </div>
+                  </div>
+                  <Button size="lg" className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
+                    Preserve My Gown
+                  </Button>
+                </div>
+                <div className="relative">
+                  <div className="w-full h-80 bg-gradient-to-br from-white to-purple-50 rounded-2xl border border-purple-100 flex items-center justify-center">
+                    <span className="text-purple-400 text-sm">[ Wedding Gown Preservation Process Image ]</span>
+                  </div>
                 </div>
               </div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Museum-quality preservation methods</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Acid-free preservation boxes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Expert stain removal before preservation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Lifetime preservation guarantee</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Preserve My Gown
-              </Button>
-            </Card>
-
-            {/* Shoe, Belt & Purse Repair */}
-            <Card className="p-8 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center">
-                  <SparklesIcon className="w-8 h-8 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-heading font-bold text-gray-900">Leather & Accessory Repair</h3>
-                  <p className="text-sm text-orange-600 font-medium">Partnered with Cobbler Direct</p>
-                </div>
-              </div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Expert shoe repair & resoling</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Belt repair & restoration</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Purse & handbag restoration</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Leather cleaning & conditioning</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Repair My Items
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Fabric & Stain Care Guide */}
-      <section className="py-10 md:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Expert Fabric & Stain Care
-            </h2>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              We specialize in caring for delicate fabrics and treating challenging stains
-            </p>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Fabric Expertise */}
-            <Card className="p-8 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl">
-              <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">Fabric Specialties</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
-                <div className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg text-sm font-medium text-center">Silk</div>
-                <div className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-sm font-medium text-center">Wool</div>
-                <div className="bg-green-50 text-green-700 px-3 py-2 rounded-lg text-sm font-medium text-center">Cashmere</div>
-                <div className="bg-orange-50 text-orange-700 px-3 py-2 rounded-lg text-sm font-medium text-center">Linen</div>
-                <div className="bg-pink-50 text-pink-700 px-3 py-2 rounded-lg text-sm font-medium text-center">Beaded</div>
-                <div className="bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-sm font-medium text-center">Leather</div>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Our expert team understands the unique care requirements of each fabric type, ensuring your garments receive the appropriate treatment they deserve.
-              </p>
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Ask About Your Fabric
-              </Button>
-            </Card>
-
-            {/* Stain Treatment */}
-            <Card className="p-8 bg-white/95 backdrop-blur-sm border border-gray-100/50 rounded-2xl">
-              <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">Stain Treatment Expertise</h3>
-              <div className="space-y-4 mb-6">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <div className="w-3 h-3 bg-red-500 rounded-full" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Wine & Food Stains</h4>
-                    <p className="text-sm text-gray-600">Specialized treatment for organic stains</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Oil & Grease</h4>
-                    <p className="text-sm text-gray-600">Advanced degreasing techniques</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <div className="w-3 h-3 bg-pink-500 rounded-full" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Makeup & Cosmetics</h4>
-                    <p className="text-sm text-gray-600">Gentle removal without fabric damage</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Ink & Dye Stains</h4>
-                    <p className="text-sm text-gray-600">Professional-grade stain removal</p>
-                  </div>
+          {/* Cobbler Direct Partnership */}
+          <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-100/50 p-8 md:p-12 relative overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl" />
+            <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
+              <div className="order-2 lg:order-1 relative">
+                <div className="w-full h-80 bg-gradient-to-br from-white to-orange-50 rounded-2xl border border-orange-100 flex items-center justify-center">
+                  <span className="text-orange-400 text-sm">[ Leather Repair Craftsmanship Image ]</span>
                 </div>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
-                <p className="text-sm text-amber-800">
-                  <strong>Pro Tip:</strong> Never rub stains! Blot gently and bring to us as soon as possible for best results.
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-4 mb-6">
+                  <Image src="/dry-clean-page/cobbler.png" alt="Leather repair services" width={80} height={80} className="w-20 h-20 object-contain" />
+                  <div>
+                    <h3 className="text-3xl font-heading font-bold text-[#12273B] mb-1">Shoe, Belt & Purse Repair</h3>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm text-orange-600 font-semibold">PARTNERED WITH</span>
+                      <Image src="/partnered/partner1.jpg" alt="Cobbler Direct" width={120} height={40} className="h-6 w-auto object-contain" />
+                    </div>
+                  </div>
+                </div>
+                <p className="text-lg text-gray-700 mb-6">
+                  Expert craftsmanship for your leather goods. From shoes to handbags, our certified specialists restore and repair with attention to detail and quality materials.
                 </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Expert shoe repair & resoling</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Belt repair & restoration</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Purse & handbag restoration</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Leather cleaning & conditioning</span>
+                  </div>
+                </div>
+                <Button size="lg" className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
+                  Repair My Items
+                </Button>
               </div>
-              <Button className="w-full bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold">
-                Stain Treatment Quote
-              </Button>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* FAQ Section */}
-      <section className="py-10 md:py-14 bg-white/10">
+      <section className="py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-white/80">
+          <div className="text-center mb-16">
+            <div className="inline-block relative">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#12273B] mb-2">
+                Frequently Asked Questions
+              </h2>
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-32 rounded-full bg-[#ebc66d]/70 blur-[1px]"></span>
+            </div>
+            <p className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto">
               Get answers to common questions about our dry cleaning services
             </p>
           </div>
@@ -674,83 +340,7 @@ export default function DryCleaningPage() {
         </div>
       </section>
 
-      {/* Clean Care Promise */}
-      <section className="py-10 md:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 p-8 md:p-12 text-center relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
-            <div className="absolute -top-16 -right-16 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
-            
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600 mb-6">
-                <StarIcon className="w-4 h-4" />
-                Our Promise to You
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
-                Professional Care Guarantee
-              </h2>
-              
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="text-left">
-                  <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">Quality Guarantee</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Fresh, clean garments every time
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Color-fast testing for delicate items
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Professional pressing included
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Satisfaction guarantee or re-clean free
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="text-left">
-                  <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">Care Promise</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Gentle handling of all garments
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Environmentally conscious processes
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Expert stain treatment consultation
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      Transparent pricing, no hidden fees
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-[#ebc66d] hover:bg-[#ebc66d]/90 text-black font-semibold px-8 py-3">
-                  Start Your Order
-                </Button>
-                <Button size="lg" variant="outline" className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-3">
-                  Visit Our Facility
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Cross-sell to Other Services */}
       <section className="py-8 bg-white/10">

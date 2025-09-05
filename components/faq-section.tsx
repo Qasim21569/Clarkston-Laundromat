@@ -59,11 +59,11 @@ export function FAQSection() {
           {/* Left: Heading + FAQ List */}
           <div className="lg:col-span-7">
             <div className="mb-10 sm:mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out">
-              <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-tight mb-2">
+              <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-[#12273B] leading-tight mb-2">
                 Frequently Asked
               </h2>
               <div className="relative inline-block">
-                <h3 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground">Questions</h3>
+                <h3 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-[#12273B]">Questions</h3>
                 <span className="absolute -bottom-2 left-2 right-2 h-3 rounded-full bg-[#ebc66d]/60 blur-[1px]"></span>
               </div>
               <p className="text-lg text-muted-foreground mt-6 max-w-2xl">
